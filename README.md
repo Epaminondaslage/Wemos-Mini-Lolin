@@ -1,7 +1,7 @@
 # D1-Mini-Lolin
 Programas de exemplo de uso da placa D1 Mini Lolin
 
-<img src="https://github.com/Epaminondaslage/D1-Mini-Lolin/blob/master/Figuras/wemos di mini lolin.JPG" height="200" width="280">
+<img src="https://github.com/Epaminondaslage/D1-Mini-Lolin/blob/master/Figuras/wemos di mini lolin.JPG" height="80" width="60">
 
 ## Sumário
 * [Informações Gerais](#user-content-informacoes_gerais)
@@ -37,7 +37,7 @@ Todos os pinos de IO funcionam em 3,3V.
 
 ## Figuras
 
-<img src="https://github.com/Epaminondaslage/D1-Mini-Lolin/blob/master/Figuras/wemos di mini lolin.JPG" height="200" width="280">
+<img src="https://github.com/Epaminondaslage/D1-Mini-Lolin/blob/master/Figuras/d1_mini_v3.1.0_1_16x9.jpg" height="160" width="90">
 
 ## Drives
 
