@@ -46,19 +46,18 @@ muito popular por possuir um  microcontrolador sem fio ESP8285 em uma placa de d
 
 <p><span style="font-size: 150%; line-height: 116%;"><strong class="text-strong">Drivers</strong></span></p>
 <h4>P&aacute;gina oficial do produto: <a href="https://www.wemos.cc/">https://www.wemos.cc/</a></h4>
+<p><span lang="pt" tabindex="0">O Wemos D1 mini pro inclui um CH340 USB para UART IC para permitir que seja programado diretamente a partir da porta USB de um computador. </span></p>
 <div class="oSioSc">
 <div id="tw-target">
 <div id="kAz1tf" class="g9WsWb">
 <div id="tw-target-text-container" class="tw-ta-container tw-nfl">
-<pre id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">O Wemos D1 mini pro inclui um CH340 USB para UART IC para permitir que seja programado diretamente a partir da porta USB de um computador.
-
-Drivers USB 32/64 bits para computadores Microsoft Windows podem ser baixados da p&aacute;gina do Github:</span></pre>
+<pre id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Drivers USB 32/64 bits para computadores Microsoft Windows podem ser baixados da p&aacute;gina do Github:</span></pre>
 </div>
 </div>
 </div>
 </div>
-<p><br /> <a class="postlink" href="https://github.com/HobbyComponents/CH340-Drivers">https://github.com/HobbyComponents/CH340-Drivers</a><br /> <br /> <br /> <strong>Instala&ccedil;&atilde;o no Windows</strong><br /> </p>
-<pre id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Drivers est&atilde;o dispon&iacute;veis no link abaixo. Basta baix&aacute;-los e descompact&aacute;-los, conectar seu D1 Mini ao seu computador<br />com um cabo USB e quando o novo hardware for detectado, aponte o assistente para a pasta que voc&ecirc; acabou de descompactar e ele deve instalar sem problemas</span><br /> <br /> <br /><strong>Instru&ccedil;&otilde;es para instalar no MA</strong></pre>
+<p><br /> <a class="postlink" href="https://github.com/HobbyComponents/CH340-Drivers">https://github.com/HobbyComponents/CH340-Drivers</a><br /> <br /> <br /> <strong>Instala&ccedil;&atilde;o no Windows</strong></p>
+<p><span lang="pt" tabindex="0">Drivers est&atilde;o dispon&iacute;veis no link abaixo. Basta baix&aacute;-los e descompact&aacute;-los, <br />conectar seu D1 Mini ao seu computador com um cabo USB e quando o novo<br />hardware for detectado, aponte o assistente para a pasta que voc&ecirc; acabou <br />de descompactar e ele deve instalar sem problemas</span><br /> <br /><strong>Instru&ccedil;&otilde;es para instalar no MA</strong></p>
 <ul>
 <li id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Baixe o driver CH34x_Install_V1.3.zip </span></li>
 <li class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Depois de baixado, clique duas vezes no arquivo zip para descompact&aacute;-lo.</span></li>
@@ -74,40 +73,16 @@ Drivers USB 32/64 bits para computadores Microsoft Windows podem ser baixados da
 </div>
 </div>
 </div>
-<pre class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">As vers&otilde;es mais recentes do Arduino IDE permitem adicionar suporte de placa de terceiros diretamente a partir do IDE do Arduino. Para adicionar suporte, simplesmente abra seu Arduino IDE e siga estas etapas:
-
-1) V&aacute; para Arquivo-&gt; Prefer&ecirc;ncias
-
-2) Na janela que se abre, localize a caixa de texto rotulada 'Additional Boards Manager URLs:' e cole a seguinte linha:</span><br /> <br /> <a class="postlink" href="http://arduino.esp8266.com/stable/package_esp8266com_index.json">http://arduino.esp8266.com/stable/packa ... index.json</a><br /> </pre>
-<div id="tw-target-text-container" class="tw-ta-container tw-nfl">
-<pre id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Em seguida, clique no bot&atilde;o OK para fechar a janela.
-
-3) Em seguida, v&aacute; para Ferramentas-&gt; Board-&gt; Boards Manager
-
-4) Na janela que &eacute; aberta, procure a entrada intitulada 'esp8266 por ESP8266 Community Version x.x.x' e clique nela.
-
-5) No canto inferior direito desta entrada voc&ecirc; deve ver agora um bot&atilde;o de instala&ccedil;&atilde;o. Clique nele e o gerenciador de placa ir&aacute; adicionar automaticamente todos os arquivos necess&aacute;rios para suportar o ESP8266. Isso pode levar alguns minutos, dependendo da velocidade da sua conex&atilde;o com a Internet.</span></pre>
+<p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">As vers&otilde;es mais recentes do Arduino IDE permitem adicionar suporte de placa de terceiros diretamente a partir do IDE do Arduino. Para adicionar suporte, simplesmente abra seu Arduino IDE e siga estas etapas: </span></p>
+<p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">1) V&aacute; para Arquivo-&gt; Prefer&ecirc;ncias </span></p>
+<p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">2) Na janela que se abre, localize a caixa de texto rotulada 'Additional Boards Manager URLs:' e cole a seguinte linha:</span><br /> <br /> <a class="postlink" href="http://arduino.esp8266.com/stable/package_esp8266com_index.json">http://arduino.esp8266.com/stable/packa ... index.json</a></p>
+<p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Em seguida, clique no bot&atilde;o OK para fechar a janela. </span></p>
+<p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">3) Em seguida, v&aacute; para Ferramentas-&gt; Board-&gt; Boards Manager </span></p>
+<p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">4) Na janela que &eacute; aberta, procure a entrada intitulada 'esp8266 por ESP8266 Community Version x.x.x' e clique nela. </span></p>
+<p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">5) No canto inferior direito desta entrada voc&ecirc; deve ver agora um bot&atilde;o de instala&ccedil;&atilde;o. Clique nele e o gerenciador de placa ir&aacute; adicionar automaticamente todos os arquivos necess&aacute;rios para suportar o ESP8266. Isso pode levar alguns minutos, dependendo da velocidade da sua conex&atilde;o com a Internet.</span></p>
 <pre class="tw-ta tw-text-small" lang="pt" style="position: absolute; visibility: hidden;">&nbsp;</pre>
-</div>
 <div id="tw-target-rmn-container" class="tw-ta-container tw-nfl">
-<div id="tw-target-text-container" class="tw-ta-container tw-nfl">
-<pre id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0"><strong>Passos adicionais para o D1 Mini Lite</strong>
-&nbsp;
-No momento de escrever este guia (06/06/17), a vers&atilde;o atual dos arquivos da placa ESP8266 (2.3.0) n&atilde;o inclui as descri&ccedil;&otilde;es da placa para o D1 Mini Lite. No entanto, isso pode ser adicionado sobrescrevendo o arquivo boards.txt para o ESP8266 estar seguindo as etapas abaixo:
-&nbsp;
-1) Fa&ccedil;a o download do arquivo boards.txt abaixo:
-
-2) Navegue at&eacute; a seguinte pasta:
-
-C: \ Usu&aacute;rios \ &lt;nome de usu&aacute;rio&gt; \ AppData \ Local \ Arduino15 \ pacotes \ esp8266 \ hardware \ esp8266 \ 2.3.0
-
-3) Sobrescreva o arquivo boards.txt encontrado neste local com o arquivo que voc&ecirc; acabou de baixar.
-
-4) Reinicie o Arduino IDE.
-
-Em tools-&gt; board voc&ecirc; deve ver op&ccedil;&otilde;es de placa adicionais para v&aacute;rios dispositivos ESP8266, incluindo um chamado 'WEMOS D1 mini Lite'.</span></pre>
-<pre class="tw-ta tw-text-small" lang="pt" style="position: absolute; visibility: hidden;">&nbsp;</pre>
-</div>
+<div id="tw-target-text-container" class="tw-ta-container tw-nfl">&nbsp;</div>
 <div id="tw-target-rmn-container" class="tw-ta-container tw-nfl">
 <pre id="tw-target-rmn" class="tw-data-placeholder tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="">&nbsp;</pre>
 </div>
