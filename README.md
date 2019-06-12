@@ -80,12 +80,6 @@ muito popular por possuir um  microcontrolador sem fio ESP8285 em uma placa de d
 <p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">3) Em seguida, v&aacute; para Ferramentas-&gt; Board-&gt; Boards Manager </span></p>
 <p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">4) Na janela que &eacute; aberta, procure a entrada intitulada 'esp8266 por ESP8266 Community Version x.x.x' e clique nela. </span></p>
 <p class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">5) No canto inferior direito desta entrada voc&ecirc; deve ver agora um bot&atilde;o de instala&ccedil;&atilde;o. Clique nele e o gerenciador de placa ir&aacute; adicionar automaticamente todos os arquivos necess&aacute;rios para suportar o ESP8266. Isso pode levar alguns minutos, dependendo da velocidade da sua conex&atilde;o com a Internet.</span></p>
-<pre class="tw-ta tw-text-small" lang="pt" style="position: absolute; visibility: hidden;">&nbsp;</pre>
-<div id="tw-target-rmn-container" class="tw-ta-container tw-nfl">
-<div id="tw-target-text-container" class="tw-ta-container tw-nfl">&nbsp;</div>
-<div id="tw-target-rmn-container" class="tw-ta-container tw-nfl">
-<pre id="tw-target-rmn" class="tw-data-placeholder tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="">&nbsp;</pre>
-</div>
 
 ## Status
 Este repositório é para alunos do Curso de Eletrotécnica do CEFET-MG 
