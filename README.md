@@ -1,7 +1,7 @@
 # D1-Mini-Lolin
 Programas de exemplo de uso da placa D1 Mini Lolin
 
-<img src="https://github.com/Epaminondaslage/Arduino-Uno/blob/master/Figuras/Arduino%20Uno%20R3.png" height="200" width="200">
+<img src="https://github.com/Epaminondaslage/D1-Mini-Lolin/blob/master/Figuras/esp8266_wemos_d1_mini_1.jpg" height="200" width="200">
 
 ## Sumário
 * [Informações Gerais](#user-content-informacoes_gerais)
