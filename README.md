@@ -86,9 +86,6 @@ muito popular por possuir um  microcontrolador sem fio ESP8285 em uma placa de d
 <div id="tw-target-rmn-container" class="tw-ta-container tw-nfl">
 <pre id="tw-target-rmn" class="tw-data-placeholder tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="">&nbsp;</pre>
 </div>
-<pre id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o">&nbsp;</pre>
-</div>
-<p>&nbsp;</p>
 
 ## Status
 Este repositório é para alunos do Curso de Eletrotécnica do CEFET-MG 
