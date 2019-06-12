@@ -54,7 +54,7 @@ Todos os pinos de IO funcionam em 3,3V.
 </div>
 </div>
 <p><br /> <a class="postlink" href="https://github.com/HobbyComponents/CH340-Drivers">https://github.com/HobbyComponents/CH340-Drivers</a><br /> <br /> <br /> <strong>Instala&ccedil;&atilde;o no Windows</strong></p>
-<p><span lang="pt" tabindex="0">Drivers est&atilde;o dispon&iacute;veis no link abaixo. Basta baix&aacute;-los e descompact&aacute;-los, <br />conectar seu D1 Mini ao seu computador com um cabo USB e quando o novo<br />hardware for detectado, aponte o assistente para a pasta que voc&ecirc; acabou <br />de descompactar e ele deve instalar sem problemas</span><br /> <br /><strong>Instru&ccedil;&otilde;es para instalar no MA</strong></p>
+<p><span lang="pt" tabindex="0">Drivers est&atilde;o dispon&iacute;veis no link abaixo. Basta baix&aacute;-los e descompact&aacute;-los, <br />conectar seu D1 Mini ao seu computador com um cabo USB e quando o novo<br />hardware for detectado, aponte o assistente para a pasta que voc&ecirc; acabou <br />de descompactar e ele deve instalar sem problemas</span><br /> <br /><strong>Instru&ccedil;&otilde;es para instalar no MAC</strong></p>
 <ul>
 <li id="tw-target-text" class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Baixe o driver CH34x_Install_V1.3.zip </span></li>
 <li class="tw-data-text tw-ta tw-text-small" dir="ltr" style="text-align: left;" data-placeholder="Tradu&ccedil;&atilde;o"><span lang="pt" tabindex="0">Depois de baixado, clique duas vezes no arquivo zip para descompact&aacute;-lo.</span></li>
