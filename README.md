@@ -1,6 +1,4 @@
 
-<img src="https://github.com/Epaminondaslage/D1-Mini-Lolin/blob/master/Figuras/cao.jpg" height="150" width="200">
-
 # D1-Mini-Lolin
 Programas de exemplo de uso da placa D1 Mini Lolin
 
