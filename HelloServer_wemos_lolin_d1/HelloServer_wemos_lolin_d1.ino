@@ -1,11 +1,20 @@
+
+/**************************************************************************
+ *                       Servidor Web Wemos Mini Lolin                    *    
+ *               Acionamento de um módulo relé com página web             *
+ *                                                                        * 
+ /*************************************************************************/
+
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
 
 #ifndef STASSID
-#define STASSID "123644987"
-#define STAPSK  "planeta514"
+//#define STASSID "123644987"
+//#define STAPSK  "planeta514"
+#define STASSID "Popo"
+#define STAPSK  "Senha"
 #endif
 
 const char* ssid = STASSID;
@@ -17,7 +26,7 @@ const int led = 13;
 
 void handleRoot() {
   digitalWrite(led, 1);
-  server.send(200, "text/plain", "hello from esp8266!");
+  server.send(200, "text/plain", "Teste olá Mundo");
   digitalWrite(led, 0);
 }
 
@@ -46,7 +55,7 @@ void setup(void) {
   WiFi.begin(ssid, password);
   Serial.println("");
 
-  // Wait for connection
+  // Aguardando conexão
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -58,19 +67,19 @@ void setup(void) {
   Serial.println(WiFi.localIP());
 
   if (MDNS.begin("esp8266")) {
-    Serial.println("MDNS responder started");
+    Serial.println("MDNS inicializado");
   }
 
   server.on("/", handleRoot);
 
   server.on("/inline", []() {
-    server.send(200, "text/plain", "this works as well");
+    server.send(200, "text/plain", "Está funcionando ok ! ");
   });
 
   server.onNotFound(handleNotFound);
 
   server.begin();
-  Serial.println("HTTP server started");
+  Serial.println("HTTP Servidor inicializado");
 }
 
 void loop(void) {
