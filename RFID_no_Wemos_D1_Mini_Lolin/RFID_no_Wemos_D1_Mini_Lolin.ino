@@ -39,7 +39,7 @@ int relePin = D1; // GPIO5
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 
 String read_rfid;
-String ok_rfid[] = {"b60711b", "b71962a3", "14a7b17a", "71603e2e"};
+String ok_rfid[] = {"aaaaaa", "b71962a3", "14a7b17a", "71603e2e"};
 
 unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
 unsigned long debounceDelay = 2000;    // the debounce time; increase if the output flickers
