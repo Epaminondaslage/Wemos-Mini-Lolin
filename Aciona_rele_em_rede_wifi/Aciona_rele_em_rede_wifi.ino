@@ -1,23 +1,25 @@
 
 
 /**************************************************************************
-                         Servidor Web Wemos Mini Lolin
-                 Acionamento de um módulo relé com página web
- *                                                                        *
-  /*************************************************************************/
+ *                 Placa de desenvolvimento Wemos D1 Mini Lolin           *
+ *               Acionamento de um módulo relé com página web             *
+ *                Necessita de shild relé para Wemos d1 mini              *
+ **************************************************************************/
 
 
 #include <ESP8266WiFi.h>
 
-// Grava SSID e Senha de rede Wifi
-const char* ssid = "123644987";
-const char* password = "planeta514";
+// Declara SSID e Senha de rede Wifi
+const char* ssid = "xxxxxxxx";
+const char* password = "xxxxxxxxxx";
 
-const char* senhaHttp = "123";
 
-// Declara variáve de Led e Rele
-int ledPin = D4; // GPIO2
-int relePin = D1; // GPIO5
+// Declara senha de acesso ao acionamento http
+const char* senhaHttp = "xxxx";
+
+// Declara variáveis de Led e Rele
+int ledPin = D4;  // GPIO2 Led build in para monitoramento
+int relePin = D1; // GPIO5 acesso ao módulo relé
 
 int value = LOW;
 
@@ -28,7 +30,7 @@ WiFiServer server(80);
 void setup() {
 
   //Inicializa porta serial
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(10);
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, HIGH);
@@ -38,6 +40,8 @@ void setup() {
   Serial.println();
   Serial.print("Conectando a Rede ");
   Serial.println(ssid);
+  
+  // inicializa WiFi
   WiFi.begin(ssid, password);
 
 
@@ -109,8 +113,8 @@ void loop() {
   client.println("<meta name = 'viewport' content = 'width=device-width, initial-scale=1,user-scalable=0'>");
   client.println(F("<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' rel='stylesheet'></link>"));
   client.println("<div class='jumbotron'>");
-  client.println("<h1 class='text-center'>Sistema de senha</h1>");
-  client.println("<h2 class='text-center'> Elevador Social </h2>");
+  client.println("<h2 class='text-center'>Desbloqueio de Senha</h2>");
+  client.println("<h3 class='text-center'>   Elevador Social </h3>");
   client.println("</div>");
   client.println("<div class='col-md-6'>");
   client.println("<div class='alert alert-info text-center' role='alert'>7&ordm andar</div>");

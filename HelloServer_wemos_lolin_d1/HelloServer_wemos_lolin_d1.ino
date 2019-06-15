@@ -10,11 +10,10 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
 
+/// Declara ssid e senha de rede wifi
 #ifndef STASSID
-//#define STASSID "123644987"
-//#define STAPSK  "planeta514"
-#define STASSID "Popo"
-#define STAPSK  "Senha"
+#define STASSID "xxxxxxx"
+#define STAPSK  "xxxxxxx"
 #endif
 
 const char* ssid = STASSID;
