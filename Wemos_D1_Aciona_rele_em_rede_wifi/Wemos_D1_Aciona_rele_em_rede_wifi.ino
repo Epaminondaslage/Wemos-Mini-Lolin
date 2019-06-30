@@ -11,9 +11,10 @@
 
 
 // Declara SSID e Senha de rede Wifi
-const char* ssid = "Popo";
-const char* password = "Planetfone";
-
+//const char* ssid = "Popo";
+//const char* password = "Planetfone";
+const char* ssid = "iot_eletrotecnica";
+const char* password = "eletrotecnica";
 
 // Declara senha de acesso ao acionamento http
 const char* senhaHttp = "7613pi";
@@ -32,7 +33,7 @@ WiFiServer server(80);
 void setup() {
 
   //Inicializa porta serial
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(10);
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, HIGH);
@@ -44,13 +45,13 @@ void setup() {
   Serial.println(ssid);
 
   //Configuração de IP estático
-  IPAddress ip(192, 168, 88, 90);         //ESP static ip
-  IPAddress gateway(192, 168, 88, 1);    //IP Address of your WiFi Router (Gateway)
-  IPAddress subnet(255, 255, 255, 0);   //Subnet mask
-  IPAddress dns(8, 8, 8, 8);           //DNS
+  //IPAddress ip(192, 168, 88, 90);         //ESP static ip
+ // IPAddress gateway(192, 168, 88, 1);    //IP Address of your WiFi Router (Gateway)
+ // IPAddress subnet(255, 255, 255, 0);   //Subnet mask
+  //IPAddress dns(8, 8, 8, 8);           //DNS
   
   // inicializa WiFi
-  WiFi.config(ip, gateway, subnet); //Caso necessitar IP estático
+ // WiFi.config(ip, gateway, subnet); //Caso necessitar IP estático
   WiFi.begin(ssid, password);
   
   while (WiFi.status() != WL_CONNECTED) {

@@ -34,7 +34,7 @@ String read_rfid;
 String ok_rfid[] = {"d37f9479", "b71962a3", "14a7b17a", "71603e2e"};
 
 unsigned long lastDebounceTime = 0;     // the last time the output pin was toggled
-unsigned long debounceDelay = 2000;    // debounce time; increase if the output flickers
+unsigned long debounceDelay = 3000;    // debounce time; increase if the output flickers
 String lastId;
 
 void setup() {
@@ -87,7 +87,7 @@ void loop() {
       Serial.println( " Cadastrado");
       digitalWrite(ledPin, LOW);
       digitalWrite(relePin, HIGH);
-      delay(3000); // tempo de ativação do relé
+      //delay(3000); // tempo de ativação do relé
       digitalWrite(ledPin, HIGH);
       digitalWrite(relePin, LOW);
     }

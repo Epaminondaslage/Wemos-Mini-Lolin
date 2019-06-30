@@ -25,7 +25,7 @@
 #include <NTPClient.h>
 
 // Configurações do Servidor NTP
-const char* servidorNTP = "a.st1.ntp.br"; // Servidor NTP para pesquisar a hora
+const char* servidorNTP = "pool.ntp.br"; // Servidor NTP para pesquisar a hora
 
 const int fusoHorario = -10800; // Fuso horário em segundos (-03h = -10800 seg)
 const int taxaDeAtualizacao = 1800000; // Taxa de atualização do servidor NTP em milisegundos
@@ -37,8 +37,8 @@ NTPClient timeClient(ntpUDP, servidorNTP, fusoHorario, 60000);
 ClosedCube_HDC1080 hdc1080;
 
 // Configuração para acesso à rede wifi coloca aqui ssid e senha
-const char* ssid = "Popo";
-const char* password = "Planetfone";
+const char* ssid = "123644987";
+const char* password = "planeta514";
 
 // Definições para o TFT no Wemos D1 Min Lolin
 #define TFT_CS D0  //for D1 mini or TFT I2C Connector Shield (V1.1.0 or later)
@@ -84,36 +84,12 @@ void handleNotFound() {
   server.send(404, "text/plain", message);
 }
 
-//Método para  tratar a data usando o timeClient.getEpochTime ()
-String getFormattedDate(unsigned long rawTime) {
-  int daysMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // array index começa em 0
-  double operador = 60 * 60 * 24 * 365; //segundos, minutos, horas, diass
-  double years = rawTime / operador;
-
-  int leapYearsPast = floor(years / 4);
-  double resto = years - floor(years);
-
-  int Year = 1970 + floor(years);  // current year
-  // if it's leap change february
-  if ((Year % 4 == 0) && ((Year % 100 != 0) || (Year % 400 == 0))) {
-    daysMonth[1] = 29; // put February in array
-  }
-  // final leap
-  int DaysOfYear = floor(resto * 365) - leapYearsPast; // dias para o final do ano
-
-  int Month = 0;
-  int suma = 0;
-  int Day = DaysOfYear;
-  while ((suma + daysMonth[Month]) <= DaysOfYear) {
-    suma = suma + daysMonth[Month];
-    Day = Day - daysMonth[Month];
-    Month++;
-  }
-  Month++;
-  String DayStr = Day < 10 ? "0" + String(Day) : String(Day);
-  String MonthStr = Month < 10 ? "0" + String(Month) : String(Month);
-  String YearStr = String(Year);
-  return DayStr + "/" + MonthStr + "/" + YearStr;
+String getFormattedDateCPP(long rawTime) {
+  struct tm * dt;
+  char buffer [30];
+  dt = localtime(&rawTime);
+  strftime(buffer, sizeof(buffer), "%d/%m/%Y %H:%M:%S", dt);
+  return (buffer);
 }
 
 
@@ -137,7 +113,7 @@ void setup(void) {
   tft.begin();
 
 #ifndef ESP8266
-  while (!Serial);
+ while (!Serial);
 #endif
 
   //Inicializa temperatura tmaxima e tminima
@@ -177,7 +153,7 @@ void setup(void) {
 
   // Caso necessário configura WEMOS D1 Mini com IP fixo
   //IPAddress subnet(255, 255, 255, 0);
-  //WiFi.config(IPAddress(10, 0, 0, 23), IPAddress(10, 0, 0, 1), subnet);
+ // WiFi.config(IPAddress(10, 0, 0, 25), IPAddress(10, 0, 0, 1), subnet);
 
 
   // Espera por conexão wifi pisca led na placa
@@ -213,17 +189,21 @@ void setup(void) {
 
 void loop(void)
 {
+  //  Variavel data formatada
+  timeClient.update();
+  unsigned long timeTratar = timeClient.getEpochTime ();
+  String dataFormatada = getFormattedDateCPP(timeTratar);
+
+  Serial.print("Data cpp: ");
+  Serial.println(dataFormatada);
+
   //rotina para rotacionar o display
   // rotation = 0,1,2,3
   // tft.setRotation(rotation);
   tft.setRotation(1);
-  testText();
+  testText(dataFormatada);
   delay(5000);
 
-  //  Variavel data formatada
-  timeClient.update();
-  unsigned long timeTratar = timeClient.getEpochTime ();
-  String dataFormatada = getFormattedDate(timeTratar);
 
   // Hora
   Serial.print("Hora NTP: ");
@@ -279,7 +259,7 @@ unsigned long testFillScreen()
   return micros() - start;
 }
 
-unsigned long testText()
+unsigned long testText(String dataFormatada)
 
 {
   String tempmax     = String(tmaxima);
@@ -297,10 +277,10 @@ unsigned long testText()
   tft.setTextSize(1);
   tft.println();
   tft.setTextColor(ILI9341_YELLOW);
-  tft.println("           Temperatura Interna do Galpao");
+  tft.println("           Temperatura Interna da Garagem");
   tft.println();
-  tft.print("                      ");
-  tft.println(timeClient.getFormattedTime());
+  tft.print("               ");
+  tft.println(dataFormatada);
   tft.setTextSize(2);
   tft.setTextColor(ILI9341_WHITE);
   tft.println();
