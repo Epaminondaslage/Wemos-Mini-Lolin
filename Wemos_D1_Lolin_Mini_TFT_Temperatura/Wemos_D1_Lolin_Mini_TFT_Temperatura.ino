@@ -4,7 +4,7 @@
     https://github.com/adafruit/Adafruit_ILI9341
     https://github.com/PaulStoffregen/XPT2046_Touchscreen
 **********************************************************************************************/
-
+// atualizado em 25/06/21
 #include <SPI.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_ILI9341.h>
