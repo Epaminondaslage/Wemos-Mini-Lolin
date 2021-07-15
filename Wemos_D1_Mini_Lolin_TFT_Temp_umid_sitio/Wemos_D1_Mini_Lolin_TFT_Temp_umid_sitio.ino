@@ -45,7 +45,7 @@ Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_RST);
 // Declara variáveis de armazenamento minimo e maximo  e fator de correção
 float tmaxima;
 float tminima;
-float ajustetemp = 1.25;
+float ajustetemp = 1.4;
 float ajusteumidade = 6.1;
 
 
