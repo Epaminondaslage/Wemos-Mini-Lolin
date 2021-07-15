@@ -18,7 +18,6 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
-#include "time.h"
 
 
 //Inicializa Sensor de temperatura e umidade HDC 1080
@@ -27,6 +26,8 @@ ClosedCube_HDC1080 hdc1080;
 // Configuração para acesso à rede wifi
 // Colocar ssi e senha da rede 
 
+//const char* ssid = "pedeserra";
+//const char* password = "planetfone";
 const char* ssid = "PLT-DIR";
 const char* password = "epaminondas";
 
@@ -40,9 +41,11 @@ const char* password = "epaminondas";
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_RST);
 
 
-// Declara variáveis de armazenamento minimo e maximo
+// Declara variáveis de armazenamento minimo e maximo  e fator de correção
 float tmaxima;
 float tminima;
+float ajustetemp = 1.25;
+float ajusteumidade = 6.1;
 
 
 int a = 0;
@@ -89,7 +92,7 @@ void setup(void) {
 
 
   //Inicializa temperatura tmaxima e tminima
-  tminima, tminima = hdc1080.readTemperature();
+  tminima, tminima = (hdc1080.readTemperature()-ajustetemp);
 
   //Inicializa o sensor de temperatura HDC1080 no endereço 0x40
   hdc1080.begin(0x40);
@@ -123,9 +126,9 @@ void setup(void) {
   Serial.println(F("Feito!"));
 
 
-  //Configura WEMOS com IP fixo
+  //Configura WEMOS LOLIN com IP fixo
   IPAddress subnet(255, 255, 255, 0);
-  WiFi.config(IPAddress(192, 168, 88, 25), IPAddress(192,168,88, 1), subnet);
+  WiFi.config(IPAddress(10, 0, 2, 25), IPAddress(10,0,2, 1), subnet);
   //Serial.println("");
 
   // Espera por conexão wifi pisca led na placa
@@ -170,9 +173,9 @@ void loop(void)
   server.handleClient();
   //Mostra os valores no Serial Monitor
   Serial.print("Temperatura: ");
-  Serial.print(hdc1080.readTemperature());
+  Serial.print(hdc1080.readTemperature()-ajustetemp);
   Serial.print(" oC, Umidade: ");
-  Serial.print(hdc1080.readHumidity());
+  Serial.print(hdc1080.readHumidity()-ajusteumidade);
   Serial.print(" %");
   Serial.println();
   Serial.println();
@@ -180,11 +183,11 @@ void loop(void)
   delay(2000);
 
   // Calcula a temp max e min
-  if (hdc1080.readTemperature() > tmaxima) {
-    tmaxima = hdc1080.readTemperature();
+  if ((hdc1080.readTemperature()-ajustetemp) > tmaxima) {
+    tmaxima = (hdc1080.readTemperature()-ajustetemp);
   }
-  if (hdc1080.readTemperature() < tminima) {
-    tminima        = hdc1080.readTemperature();
+  if ((hdc1080.readTemperature()-ajustetemp) < tminima) {
+    tminima = (hdc1080.readTemperature()-ajustetemp);
   }
 
 
@@ -204,9 +207,9 @@ unsigned long testText()
 {
   String tempmax     = String(tmaxima);
   String tempmin     = String(tminima);
-  String temp        = String(hdc1080.readTemperature());
-  String umid        = String(hdc1080.readHumidity());
-  String tempstr = String(hdc1080.readTemperature());
+  String temp        = String(hdc1080.readTemperature()-ajustetemp);
+  String umid        = String(hdc1080.readHumidity()-ajusteumidade);
+  String tempstr = String(hdc1080.readTemperature()-ajustetemp);
   
   // Configuração do TFT
   unsigned long start = micros();
@@ -222,31 +225,43 @@ unsigned long testText()
   tft.setTextColor(ILI9341_WHITE);
   tft.setTextSize(2);
   tft.setCursor(10,100);
-  tft.println("Temperatura" );
+  tft.println("Temperatura:" );
   tft.setTextSize(3);
-  tft.setCursor(150,100);
-  tft.println(temp + " oC");
+  tft.setCursor(155,100);
+  tft.println(temp);
+  tft.setTextSize(2);
+  tft.setCursor(250,95);
+  tft.println("o");
+  tft.setTextSize(3);
+  tft.setCursor(265,100);
+  tft.println("C");
   tft.setTextSize(2);
   tft.setCursor(10,140);
-  tft.println("Umidade" );
+  tft.println("Umidade....:" );
   tft.setTextSize(3);
-  tft.setCursor(150,140);
+  tft.setCursor(155,140);
   tft.println( umid + " %");
   tft.setTextSize(2);
-  tft.setTextColor(ILI9341_RED);
+  tft.setTextColor(ILI9341_YELLOW);
   tft.setCursor(10,220);
-  tft.println("Max:"+tempmax + " oC ");
+  tft.println("Max:"+tempmax + " C");
+  tft.setTextSize(1);
+  tft.setCursor(120,220);
+  tft.println("o");
+  tft.setTextSize(2);
   tft.setCursor(160,220);
-  tft.setTextColor(ILI9341_BLUE);
-  tft.println("Min:"+tempmin + " oC ");
+  tft.println("Min:"+tempmin + " C");
+  tft.setTextSize(1);
+  tft.setCursor(270,220);
+  tft.println("o");
   return micros() - start;
 }
-//********************************
+//***********************************************************************
 String homePage() {
   String tempmax     = String(tmaxima);
   String tempmin     = String(tminima);
-  String temp        = String(hdc1080.readTemperature());
-  String umid        = String(hdc1080.readHumidity());
+  String temp        = String(hdc1080.readTemperature()-ajustetemp);
+  String umid        = String(hdc1080.readHumidity()-ajusteumidade);
   return (
            "<!DOCTYPE html>"
            "<html>"
@@ -264,4 +279,5 @@ String homePage() {
            "<p>&nbsp;</p>"
            "<div style='text-align: center;'>&copy 2021 - Epaminondas Lage </div>"
          );
+  //***********************************************************************       
 }
