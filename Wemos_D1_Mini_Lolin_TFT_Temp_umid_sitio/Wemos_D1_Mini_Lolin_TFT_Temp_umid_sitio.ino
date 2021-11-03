@@ -27,10 +27,10 @@ ClosedCube_HDC1080 hdc1080;
 // Configuração para acesso à rede wifi
 // Colocar ssi e senha da rede a ser utilizada
 
-//const char* ssid = "pedeserra";
-//const char* password = "planetfone";
-const char* ssid = "PLT-DIR";
-const char* password = "epaminondas";
+const char* ssid = "pedeserra";
+const char* password = "planetfone";
+//const char* ssid = "PLT-DIR";
+//const char* password = "epaminondas";
 
 // configura TFT para i2c
 
@@ -129,7 +129,7 @@ void setup(void) {
 
   //Configura WEMOS LOLIN com IP fixo
   IPAddress subnet(255, 255, 255, 0);
-  WiFi.config(IPAddress(10, 0, 2, 25), IPAddress(10,0,2, 1), subnet);
+  WiFi.config(IPAddress(10, 0, 0, 25), IPAddress(10,0,0, 1), subnet);
   //Serial.println("");
 
   // Espera por conexão wifi pisca led na placa
@@ -223,6 +223,8 @@ unsigned long testText()
   tft.setTextColor(ILI9341_YELLOW);
   tft.setCursor(100,35);
   tft.println("Igarape-MG");
+  tft.setCursor(75,60);
+  tft.println("http://10.0.0.25");
   tft.setTextColor(ILI9341_WHITE);
   tft.setTextSize(2);
   tft.setCursor(10,100);
